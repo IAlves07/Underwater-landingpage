@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Seaweed Landing Page</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">
+      <h1>Seaweed</h1>
+    </a>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="fas fa-bars"></div>
+  </header>
+
+  <div class="container">
+    <div class="content">
+      <h1>Underwater</h1>
+      <h2>Adventure</h2>
+      <a href="#"><button>Join Now</button></a>
+
+      <div class="icons">
+        <a href="https://github.com/IAlves07"
+          target="_blank" class="fab fa-facebook-f"></a>
+        <a href="https://www.linkedin.com/in/jo%C3%A3o-igor-a-da-silva-08b7642a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/in/jo%C3%A3o-igor-a-da-silva-08b7642a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank" class="fab fa-linkedin"></a>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video src="Vid1.mp4" autoplay muted loop class="vid vid1 active"></video>
+      <video src="Vid2.mp4" autoplay muted loop class="vid vid2"></video>
+      <video src="Vid3.mp4" autoplay muted loop class="vid vid3"></video>
+    </div>
+
+    <div class="controls">
+      <div class="dots dot1" data-target="vid1"></div>
+      <div class="dots dot2" data-target="vid2"></div>
+      <div class="dots dot3" data-target="vid3"></div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".fa-bars").click(function () {
+        $(this).toggleClass("fa-times");
+        $(".navbar").toggleClass("nav-toggle");
+      });
+
+      $(".navbar").click(function () {
+        $(this).removeClass("nav-toggle");
+        $(".fa-bars").removeClass("fa-times");
+      });
+
+      $(".dots").click(function () {
+        var target = $(this).data("target");
+        $(".video-container video").removeClass("active");
+        $("." + target).addClass("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
